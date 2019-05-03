@@ -11,6 +11,8 @@ class University(models.Model):
     class Meta:
         verbose_name=u' دانشگاه'
         verbose_name_plural=u'دانشگاه‌ها '  
+    def __str__(self):
+        return {self.name}
 
 class Faculty(models.Model):
     name = models.CharField(verbose_name="نام دانشکده" , max_length = 40)
@@ -21,7 +23,9 @@ class Faculty(models.Model):
     )    
     class Meta:
         verbose_name=u'دانشکده '
-        verbose_name_plural=u'دانشکده‌ها '  
+        verbose_name_plural=u'دانشکده‌ها ' 
+    def __str__(self):
+        return {self.name} 
 
  
 class Chart(models.Model):
@@ -38,6 +42,8 @@ class Chart(models.Model):
     class Meta:
         verbose_name=u'چارت تحصیلی '
         verbose_name_plural=u'چارت‌های تحصیلی'  
+    def __str__(self):
+        return {self.name}
 
 class Study(models.Model):
     degree = models.IntegerField(verbose_name="مقطع تحصیلی")
@@ -50,6 +56,8 @@ class Study(models.Model):
     class Meta:
         verbose_name=u'تحصیل '
         verbose_name_plural=u'تحصیل‌ها '  
+    def __str__(self):
+        return {self.name}
 
 class Scores(models.Model):
     score = models.FloatField(verbose_name="نمره")
@@ -66,6 +74,8 @@ class Scores(models.Model):
     class Meta:
         verbose_name=u'نمره '
         verbose_name_plural=u'نمره‌ها '  
+    def __str__(self):
+        return {self.name}
 
 class Course(models.Model):
     title = models.CharField(verbose_name="عنوان",max_length = 20)
@@ -85,3 +95,5 @@ class Course(models.Model):
     class Meta:
         verbose_name=u'درس '
         verbose_name_plural=u'درس‌ها '  
+    def __str__(self):
+        return {self.name}
