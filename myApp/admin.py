@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from .models import University , Faculty ,Chart, Study , Course ,Scores
 # Register your models here.
 admin.site.register(University)
@@ -12,3 +13,7 @@ admin.site.register(Study)
 admin.site.register(Scores)
 
 admin.site.register(Course)
+
+admin.site.site_header = ' سامانه واحدیار - پنل مدیریت '
+admin.site.site_title = ' پرتال مدیریت - واحدیار'
+admin.site.index_title = ' صفحه مدیریت سایت'

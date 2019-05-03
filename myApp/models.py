@@ -8,6 +8,9 @@ class University(models.Model):
     has_bachelors_degree = models.NullBooleanField(verbose_name="مقطع کارشناسی")
     has_masters_degree = models.NullBooleanField(verbose_name="مقطع کارشناسی ارشد")
     has_doctorate_degree = models.NullBooleanField(verbose_name="مقطع دکتری")
+    class Meta:
+        verbose_name=u' دانشگاه'
+        verbose_name_plural=u'دانشگاه‌ها '  
 
 class Faculty(models.Model):
     name = models.CharField(verbose_name="نام دانشکده" , max_length = 40)
@@ -16,6 +19,9 @@ class Faculty(models.Model):
         on_delete=models.CASCADE,
         verbose_name="نام دانشگاه"
     )    
+    class Meta:
+        verbose_name=u'دانشکده '
+        verbose_name_plural=u'دانشکده‌ها '  
 
  
 class Chart(models.Model):
@@ -29,6 +35,9 @@ class Chart(models.Model):
         on_delete=models.CASCADE,
         verbose_name="دانشکده"
     ) 
+    class Meta:
+        verbose_name=u'چارت تحصیلی '
+        verbose_name_plural=u'چارت‌های تحصیلی'  
 
 class Study(models.Model):
     degree = models.IntegerField(verbose_name="مقطع تحصیلی")
@@ -38,6 +47,9 @@ class Study(models.Model):
         on_delete=models.CASCADE,
         verbose_name="چارت"
     )
+    class Meta:
+        verbose_name=u'تحصیل '
+        verbose_name_plural=u'تحصیل‌ها '  
 
 class Scores(models.Model):
     score = models.FloatField(verbose_name="نمره")
@@ -51,10 +63,13 @@ class Scores(models.Model):
         on_delete=models.CASCADE,
         verbose_name="درس"
     )
+    class Meta:
+        verbose_name=u'نمره '
+        verbose_name_plural=u'نمره‌ها '  
 
 class Course(models.Model):
     title = models.CharField(verbose_name="عنوان",max_length = 20)
-    course_type = models.IntegerField(verbose_name="نوع درس",max_length = 20)
+    course_type = models.IntegerField(verbose_name="نوع درس")
     vahed_nazari = models.IntegerField(verbose_name="تعداد واحد نظری")
     vahed_amali = models.IntegerField(verbose_name="تعداد واحد عملی")
     corequisite_courses = models.ManyToManyField( #همنیاز
@@ -67,3 +82,6 @@ class Course(models.Model):
         verbose_name="پیش‌نیاز",
         related_name="prerequisites"
     )
+    class Meta:
+        verbose_name=u'درس '
+        verbose_name_plural=u'درس‌ها '  
