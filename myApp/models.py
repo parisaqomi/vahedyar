@@ -2,6 +2,16 @@ from django.db import models
 from django.contrib import auth
 from django.contrib.auth.models import User
 
+COURSE_TYPE_CHOISES=[(1,u'درس اصلی') ,
+     (2,u'درس تخصصی') ,
+      (3,u'درس عمومی'),
+      (4,u'درس اختیاری')]
+
+DEGREE_TYPE_CHOISES=[(1,u'کاردانی') ,
+     (2,u'کارشناسی') ,
+      (3,u'کارشناسی ارشد'),
+      (4,u'دکتری')]
+
 class University(models.Model):
     name = models.CharField(verbose_name="نام دانشگاه", max_length = 40)
     has_associates_degree = models.NullBooleanField(verbose_name="مقطع کاردانی")
@@ -12,7 +22,7 @@ class University(models.Model):
         verbose_name=u' دانشگاه'
         verbose_name_plural=u'دانشگاه‌ها '  
     def __str__(self):
-        return {self.name}
+        return f"{self.name}" 
 
 class Faculty(models.Model):
     name = models.CharField(verbose_name="نام دانشکده" , max_length = 40)
@@ -25,15 +35,15 @@ class Faculty(models.Model):
         verbose_name=u'دانشکده '
         verbose_name_plural=u'دانشکده‌ها ' 
     def __str__(self):
-        return {self.name} 
+        return f"{self.name} {self.universiy.name}" 
 
  
 class Chart(models.Model):
-    title = models.CharField(verbose_name="عنوان جارت" ,max_length = 40)
+    title = models.CharField(verbose_name="عنوان چارت" ,max_length = 40)
     is_active = models.BooleanField(verbose_name="فعال بودن")
     degree = models.CharField(verbose_name="مقطع" , max_length = 20)
     acceptance_date = models.DateField(verbose_name="تاریخ تصویب")
-    course = models.ManyToManyField("Course")
+    course = models.ManyToManyField("Course" , null=True , blank=True)
     faculty = models.ForeignKey(
         'Faculty', 
         on_delete=models.CASCADE,
@@ -43,21 +53,26 @@ class Chart(models.Model):
         verbose_name=u'چارت تحصیلی '
         verbose_name_plural=u'چارت‌های تحصیلی'  
     def __str__(self):
-        return {self.name}
+        return f"چارت {self.title} دانشکده {self.faculty}" 
 
 class Study(models.Model):
-    degree = models.IntegerField(verbose_name="مقطع تحصیلی")
+    degree = models.IntegerField(choices=DEGREE_TYPE_CHOISES, verbose_name="مقطع تحصیلی")
     entrance_year = models.DateField(verbose_name="سال ورود")
+    student = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        verbose_name="دانشجو"
+    )
     chart = models.ForeignKey(
         'Chart', 
         on_delete=models.CASCADE,
         verbose_name="چارت"
     )
     class Meta:
-        verbose_name=u'تحصیل '
-        verbose_name_plural=u'تحصیل‌ها '  
+        verbose_name=u'مقطع تحصیلی '
+        verbose_name_plural=u'مقاطع تحصیلی '  
     def __str__(self):
-        return {self.name}
+        return f"{self.get_degree_display()} {self.chart.title}" 
 
 class Scores(models.Model):
     score = models.FloatField(verbose_name="نمره")
@@ -75,25 +90,27 @@ class Scores(models.Model):
         verbose_name=u'نمره '
         verbose_name_plural=u'نمره‌ها '  
     def __str__(self):
-        return {self.name}
+        return f"{self.name}" 
 
 class Course(models.Model):
     title = models.CharField(verbose_name="عنوان",max_length = 20)
-    course_type = models.IntegerField(verbose_name="نوع درس")
+    course_type = models.IntegerField(choices=COURSE_TYPE_CHOISES, verbose_name="نوع درس")
     vahed_nazari = models.IntegerField(verbose_name="تعداد واحد نظری")
     vahed_amali = models.IntegerField(verbose_name="تعداد واحد عملی")
     corequisite_courses = models.ManyToManyField( #همنیاز
         'self', 
         verbose_name="هم‌نیاز",
-        related_name="corequisites"
+        related_name="corequisites",
+        blank=True
     )
     prerequisite_courses = models.ManyToManyField(
         'self', 
         verbose_name="پیش‌نیاز",
-        related_name="prerequisites"
+        related_name="prerequisites",
+        blank=True
     )
     class Meta:
         verbose_name=u'درس '
         verbose_name_plural=u'درس‌ها '  
     def __str__(self):
-        return {self.name}
+        return f"{self.title}" 
