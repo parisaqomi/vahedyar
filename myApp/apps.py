@@ -2,4 +2,5 @@ from django.apps import AppConfig
 
 
 class MyappConfig(AppConfig):
-    name = 'myApp'
+    name = 'سامانه‌ی دانشجویان'
+    verbose_name='سامانه‌ی دانشجویان'
