@@ -13,6 +13,9 @@ import UserProfile from "views/UserProfile/UserProfile.jsx";
 import TableList from "views/TableList/TableList.jsx";
 import CourseSituations from "views/CourseSituations/CourseSituations.jsx";
 import CourseAssistant from "views/CourseAssistant/CourseAssistant.jsx"
+import pishkhan from "views/pishkhan/pishkhaan.jsx"
+import form from "views/form/form.jsx"
+
 //import Typography from "views/Typography/Typography.jsx";
 //import Icons from "views/Icons/Icons.jsx";
 //import NotificationsPage from "views/Notifications/Notifications.jsx";
@@ -112,6 +115,22 @@ const dashboardRoutes = [
     component: CourseAssistant,
     layout: "/rtl"
   },
+  {
+  path: "/pishkhan",
+  name: "pishkhan",
+  rtlName: "پیشخوان",
+  icon: BubbleChart,
+  component: pishkhan,
+  layout: "/rtl"
+},
+{
+  path: "/form",
+  name: "form",
+  rtlName: "پیشخوان",
+  icon: BubbleChart,
+  component: form,
+  layout: "/rtl"
+},
 ];
 
 export default dashboardRoutes;

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -56,6 +57,12 @@ const styles = theme => ({
   },
  TextRight:{
     textAlign: "right",
+  },
+  blueHeader:{
+    backgroundColor: "#3a99d9 !important",
+  },
+  whiteText:{
+    color:"#fff !important",
   }
 });
 
@@ -88,53 +95,50 @@ class ControlledExpansionPanels extends React.Component {
               tableData={[]}
             />
             <div className={classes.root}>
-<ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
-  <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-    <Typography className={classes.heading}> دروس عمومی</Typography>
-    <Typography className={classes.secondaryHeading}></Typography>
-  </ExpansionPanelSummary>
-  <ExpansionPanelDetails>
-    <Typography>
-      اندیشه ۱
-    </Typography>
-  </ExpansionPanelDetails>
-</ExpansionPanel>
-<ExpansionPanel expanded={expanded === 'panel2'} onChange={this.handleChange('panel2')}>
-  <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-    <Typography className={classes.heading}>دروس تخصصی</Typography>
-    <Typography className={classes.secondaryHeading}>
-      
-    </Typography>
-  </ExpansionPanelSummary>
-  <ExpansionPanelDetails>
-    <Typography>
-      سیستم عامل
-    </Typography>
-  </ExpansionPanelDetails>
-</ExpansionPanel>
-<ExpansionPanel expanded={expanded === 'panel3'} onChange={this.handleChange('panel3')}>
-  <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-    <Typography className={classes.heading}> دروس پایه</Typography>
-    <Typography className={classes.secondaryHeading}>
-      
-    </Typography>
-  </ExpansionPanelSummary>
-  <ExpansionPanelDetails>
-    <Typography>
-      ریاضی مهندسی
-    </Typography>
-  </ExpansionPanelDetails>
-</ExpansionPanel>
-<ExpansionPanel expanded={expanded === 'panel4'} onChange={this.handleChange('panel4')}>
-  <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-    <Typography className={classes.heading}> دروس اختیاری</Typography>
-  </ExpansionPanelSummary>
-  <ExpansionPanelDetails>
-    <Typography>
-      مدیریت پروژه
-    </Typography>
-  </ExpansionPanelDetails>
-</ExpansionPanel>
+            <ExpansionPanel>
+              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon className={classes.whiteText} />} className={classes.blueHeader}>
+                <Typography className={classes.heading} className={classes.whiteText}> دروس اختیاری</Typography>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails>
+                <Typography>
+                  مدیریت پروژه
+                </Typography>
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+
+            <ExpansionPanel >
+              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon className={classes.whiteText} />} className={classes.blueHeader}>
+                <Typography className={classes.heading} className={classes.whiteText}> دروس اختیاری</Typography>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails>
+                <Typography>
+                  مدیریت پروژه
+                </Typography>
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+
+            <ExpansionPanel>
+              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon className={classes.whiteText}/>} className={classes.blueHeader}>
+                <Typography className={classes.heading} className={classes.whiteText}> دروس اختیاری</Typography>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails>
+                <Typography>
+                  مدیریت پروژه
+                </Typography>
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+
+            <ExpansionPanel>
+              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon className={classes.whiteText}/>} className={classes.blueHeader}>
+                <Typography className={classes.heading} className={classes.whiteText}> دروس اختیاری</Typography>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails>
+                <Typography>
+                  مدیریت پروژه
+                </Typography>
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+
 </div>
 
           </CardBody>

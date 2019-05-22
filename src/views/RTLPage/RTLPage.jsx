@@ -7,32 +7,32 @@ import ChartistGraph from "react-chartist";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
-import Store from "@material-ui/icons/Store";
-import Warning from "@material-ui/icons/Warning";
-import DateRange from "@material-ui/icons/DateRange";
-import LocalOffer from "@material-ui/icons/LocalOffer";
-import Update from "@material-ui/icons/Update";
-import ArrowUpward from "@material-ui/icons/ArrowUpward";
-import AccessTime from "@material-ui/icons/AccessTime";
+// import Store from "@material-ui/icons/Store";
+// import Warning from "@material-ui/icons/Warning";
+// import DateRange from "@material-ui/icons/DateRange";
+// import LocalOffer from "@material-ui/icons/LocalOffer";
+// import Update from "@material-ui/icons/Update";
+// import ArrowUpward from "@material-ui/icons/ArrowUpward";
+// import AccessTime from "@material-ui/icons/AccessTime";
 import Accessibility from "@material-ui/icons/Accessibility";
-import BugReport from "@material-ui/icons/BugReport";
-import Code from "@material-ui/icons/Code";
-import Cloud from "@material-ui/icons/Cloud";
+// import BugReport from "@material-ui/icons/BugReport";
+// import Code from "@material-ui/icons/Code";
+// import Cloud from "@material-ui/icons/Cloud";
 // core components
-import Button from "components/CustomButtons/Button.jsx";
+//import Button from "components/CustomButtons/Button.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
-import Table from "components/Table/Table.jsx";
-import Tasks from "components/Tasks/Tasks.jsx";
-import CustomTabs from "components/CustomTabs/CustomTabs.jsx";
-import Danger from "components/Typography/Danger.jsx";
+// import Table from "components/Table/Table.jsx";
+// import Tasks from "components/Tasks/Tasks.jsx";
+// import CustomTabs from "components/CustomTabs/CustomTabs.jsx";
+// import Danger from "components/Typography/Danger.jsx";
 import Card from "components/Card/Card.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
-import CardAvatar from "components/Card/CardAvatar.jsx";
+//import CardAvatar from "components/Card/CardAvatar.jsx";
 import CardIcon from "components/Card/CardIcon.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
-import SnackbarContent from "components/Snackbar/SnackbarContent.jsx";
+//import SnackbarContent from "components/Snackbar/SnackbarContent.jsx";
 
 import {
   dailySalesChart,
@@ -42,7 +42,7 @@ import {
 
 import rtlStyle from "assets/jss/material-dashboard-react/views/rtlStyle.jsx";
 
-import avatar from "assets/img/faces/marc.jpg";
+//import avatar from "assets/img/faces/marc.jpg";
 
 let bugs = [
   "طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن؟",
@@ -59,6 +59,11 @@ let server = [
   "از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی ؟",
   "از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند؟"
 ];
+const styles = theme => ({
+  floatRight:{
+    float:"right !important",
+  }
+});
 
 class RTLPage extends React.Component {
   state = {
@@ -78,8 +83,8 @@ class RTLPage extends React.Component {
         <GridContainer>
           <GridItem xs={12} sm={12} md={6}>
             <Card>
-              <CardHeader color="warning" stats icon>
-                <CardIcon color="warning">
+              <CardHeader color="warning" stats icon className={classes.floatRight}>
+                <CardIcon color="warning" className={classes.floatRight}>
                   <Icon>content_copy</Icon>
                 </CardIcon>
                 
