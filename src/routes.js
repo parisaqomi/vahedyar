@@ -126,7 +126,7 @@ const dashboardRoutes = [
 {
   path: "/form",
   name: "form",
-  rtlName: "پیشخوان",
+  rtlName: "فرم",
   icon: BubbleChart,
   component: form,
   layout: "/rtl"
