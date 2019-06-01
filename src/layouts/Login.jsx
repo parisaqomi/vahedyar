@@ -16,7 +16,7 @@ import Paper from '@material-ui/core/Paper';
 import classNames from 'classnames';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
-import sidebar2 from '../assets/img/sidebar2.jpg';
+import loginp from '../assets/img/loginp.svg';
 function TabContainer({ children, dir }) {
   return (
     <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
@@ -79,11 +79,14 @@ const styles = theme => ({
   centerFlex:{
     display:'flex',
     justifyContent: 'center' ,
+  },
+  pic:{
+    margin:"2em",
   }
 });
 
 
-class FullWidthTabs extends React.Component {
+class loginPage extends React.Component {
   state = {
     value: 0,
   };
@@ -102,8 +105,8 @@ class FullWidthTabs extends React.Component {
     return (
       <div className={classes.root} dir="rtl">
       <Grid container spacing={0}>
-      <Grid item xs={6} className={classes.centerFlex}>
-       <Grid item xs={6}>
+      <Grid item sm={6} xs={12} className={classes.centerFlex}>
+       <Grid item sm={6} xs={12}>
           <AppBar position="static" color="default">
             <Tabs
               value={this.state.value}
@@ -229,9 +232,9 @@ class FullWidthTabs extends React.Component {
         </SwipeableViews>
          </Grid>
       </Grid>
-      <Grid item xs={6}>
+      <Grid item sm={6} xs={0}>
        {/* ax miad o bg */}
-        <img src={sidebar2} />;
+        <img className={classes.pic} src={loginp} />
       </Grid>
       </Grid>
       </div>
@@ -239,9 +242,9 @@ class FullWidthTabs extends React.Component {
   }
 }
 
-FullWidthTabs.propTypes = {
+loginPage.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(FullWidthTabs);
+export default withStyles(styles, { withTheme: true })(loginPage);
