@@ -21,7 +21,7 @@ class CourseItemBox extends React.Component {
                         {item.vahedAmali}
                     </div>
                 </div>
-                <div onClick={this.Remove.bind(this,item.id)}>
+                <div className="close-icon" onClick={this.Remove.bind(this,item.id)}>
                     X
                 </div>
             </div>

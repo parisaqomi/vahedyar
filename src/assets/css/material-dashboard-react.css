@@ -491,3 +491,33 @@ footer ul li a:hover {
   right: auto;
   left: 80px;
 }
+.course-item{
+  border: 1px solid red;
+  display: inline-block;
+  padding: 1em;
+  border-radius: 3%;
+  position: relative;
+  margin: auto 1em;
+}
+.course-item-vahed{
+  display: flex;
+  flex-direction: row;
+}
+.course-item-vahed div{
+  margin: 0.5em;
+}
+
+.close-icon{
+  position: absolute;
+  top: -11px;
+  left: -5px;
+  border: 1px solid red;
+  border-radius: 50%;
+  padding: 3px;
+  background: red;
+  color: #fff;
+}
+
+.course-item-name{
+  border-bottom: 1px solid;
+}
