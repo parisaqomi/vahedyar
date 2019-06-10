@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -7,13 +8,22 @@ import Grid from '@material-ui/core/Grid';
 
 
 class StudyItem extends React.Component {
-    // state={
-    //     degree:null,
-    //     chart:null
-    // }
+    state={
+        degree:this.props.degree,
+        chartId:this.props.chartId,
+        chartName:null
+    }
+    componentDidMount(){
+        axios.get('http://localhost:8000/charts/'+this.state.chartId)
+        .then((res)=> {
+            this.setState({chartName:res.data.title})
+
+        })
+    }
     render (){
-        const { item } = this.props;
+       
         return(
+            
         <div>
             <Grid item xs={4}>
             {/* <Card className={classes.card}></Card> */}
@@ -21,10 +31,10 @@ class StudyItem extends React.Component {
                     <CardActionArea>
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="h3">
-                                {this.props.degree}
+                                {this.state.degree}
                             </Typography>
                             <Typography gutterBottom variant="h5" component="h4">
-                                {this.props.chart}   
+                                {this.state.chartName}   
                             </Typography>
                         </CardContent>
                     </CardActionArea>

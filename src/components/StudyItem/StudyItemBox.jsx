@@ -1,5 +1,4 @@
 import React from "react";
-import axios from 'axios';
 import StudyItem from './StudyItem';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -19,15 +18,11 @@ function StudyItemBox(props) {
         <div>
             
             {
-                props.items.map((item,index) => {
-                    // <StudyItem key={index} item={item}/>
-                    axios.get('http://localhost:8000/charts/'+item.chart)
-                    .then((res)=>                
-                        (<StudyItem key={index} degree={degreeNames[item.degree]} chart={res.data.title}/>)
+                props.items.map((item,index) => 
+                                   
+                        (<StudyItem key={index} degree={degreeNames[item.degree]} chartId={item.chart}/>)
                     )
                 }
-                )
-            }
              
           <Grid item xs={4}>
             {/* <Card className={classes.card}> */}
