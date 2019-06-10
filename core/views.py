@@ -4,7 +4,7 @@ from core.serializers import UniversitySerializer , Courseserializer ,Scoresseri
 
 
 class UniversityViewSet(ModelViewSet):
-    queryset = University.objects.all().order_by('-date_joined')
+    queryset = University.objects.all().order_by()
     serializer_class = UniversitySerializer
 
 

@@ -20,7 +20,7 @@ class FacultySerializer(serializers.ModelSerializer):
             'universiy'
             )
 
-class ChartSerializer(serializers.ModelSerializer):
+class ChartSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Chart
         fields = (
@@ -38,7 +38,9 @@ class Studyserializer(serializers.ModelSerializer):
         fields =(
             'degree',
             'entrance_year',
-            'student'
+            'student',
+            'chart',
+            
         )
 
 class Scoresserializer(serializers.ModelSerializer):
@@ -51,7 +53,7 @@ class Scoresserializer(serializers.ModelSerializer):
 
 class Courseserializer(serializers.ModelSerializer):
     class Meta:
-        Model = Course
+        model = Course
         fields = (
             'title',
             'course_type',

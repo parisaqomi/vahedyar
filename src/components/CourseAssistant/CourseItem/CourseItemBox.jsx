@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React from "react";
 
 class CourseItemBox extends React.Component {
     Remove(id) {

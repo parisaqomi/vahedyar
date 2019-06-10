@@ -13,7 +13,7 @@ import UserProfile from "views/UserProfile/UserProfile.jsx";
 import TableList from "views/TableList/TableList.jsx";
 import CourseSituations from "views/CourseSituations/CourseSituations.jsx";
 import CourseAssistant from "views/CourseAssistant/CourseAssistant.jsx"
-import pishkhan from "views/pishkhan/pishkhaan.jsx"
+import StudyPanel from "views/StudyPanel/StudyPanel.jsx"
 import form from "views/form/form.jsx"
 
 //import Typography from "views/Typography/Typography.jsx";
@@ -116,11 +116,11 @@ const dashboardRoutes = [
     layout: "/rtl"
   },
   {
-  path: "/pishkhan",
-  name: "pishkhan",
+  path: "/StudyPanel",
+  name: "StudyPanel",
   rtlName: "پیشخوان",
   icon: BubbleChart,
-  component: pishkhan,
+  component: StudyPanel,
   layout: "/rtl"
 },
 {
