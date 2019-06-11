@@ -79,7 +79,7 @@ class ControlledExpansionPanels extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const { expanded } = this.state;
+    // const { expanded } = this.state;
 
     return (
       <GridContainer>
@@ -97,7 +97,7 @@ class ControlledExpansionPanels extends React.Component {
             <div className={classes.root}>
             <ExpansionPanel>
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon className={classes.whiteText} />} className={classes.blueHeader}>
-                <Typography className={classes.heading} className={classes.whiteText}> دروس اختیاری</Typography>
+                <Typography className={classes.heading} className={classes.whiteText}> 1دروس اختیاری</Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <Typography>
@@ -119,7 +119,7 @@ class ControlledExpansionPanels extends React.Component {
 
             <ExpansionPanel>
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon className={classes.whiteText}/>} className={classes.blueHeader}>
-                <Typography className={classes.heading} className={classes.whiteText}> دروس اختیاری</Typography>
+                <Typography className={classes.heading} className={classes.whiteText}> 2دروس اختیاری</Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <Typography>
@@ -130,7 +130,7 @@ class ControlledExpansionPanels extends React.Component {
 
             <ExpansionPanel>
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon className={classes.whiteText}/>} className={classes.blueHeader}>
-                <Typography className={classes.heading} className={classes.whiteText}> دروس اختیاری</Typography>
+                <Typography className={classes.heading} className={classes.whiteText}> 3دروس اختیاری</Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <Typography>

@@ -82,13 +82,14 @@ class StudyPanel extends React.Component {
 
     return (
       <div>
-        <Grid container spacing={24}>
+        <Grid container spacing={24} >
+          <Grid item xs={12} md={6}>
           {/* <StudyItem degree={'123'} chart={'321'}></StudyItem>
           <StudyItem degree={'ABX'} chart={'XBA'}></StudyItem> */}
                 { (loading) ? <div>...loading</div> : null }
                 { (!loading && data) ? <StudyItemBox items={data} /> : null}
                 
-          
+          </Grid>
         </Grid>
       </div>
     );

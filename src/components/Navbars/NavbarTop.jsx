@@ -1,12 +1,9 @@
 import React from "react";
 import classNames from "classnames";
 import withStyles from "@material-ui/core/styles/withStyles";
-import Grow from "@material-ui/core/Grow";
 import Hidden from "@material-ui/core/Hidden";
 import Poppers from "@material-ui/core/Popper";
 import Person from "@material-ui/icons/Person";
-import Notifications from "@material-ui/icons/Notifications";
-import Dashboard from "@material-ui/icons/Dashboard";
 import Search from "@material-ui/icons/Search";
 // core components
 import CustomInput from "components/CustomInput/CustomInput.jsx";

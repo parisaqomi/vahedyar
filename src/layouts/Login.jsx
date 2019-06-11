@@ -234,7 +234,7 @@ class loginPage extends React.Component {
       </Grid>
       <Grid item sm={6} xs={0}>
        {/* ax miad o bg */}
-        <img className={classes.pic} src={loginp} />
+        <img className={classes.pic} src={loginp} alt={"pic"}/>
       </Grid>
       </Grid>
       </div>

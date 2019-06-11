@@ -11,9 +11,7 @@ import CardHeader from "components/Card/CardHeader.jsx";
 import CardIcon from "components/Card/CardIcon.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
-
 import {
-  dailySalesChart,
   emailsSubscriptionChart,
   completedTasksChart
 } from "variables/charts.jsx";
@@ -22,26 +20,6 @@ import rtlStyle from "assets/jss/material-dashboard-react/views/rtlStyle.jsx";
 
 //import avatar from "assets/img/faces/marc.jpg";
 
-let bugs = [
-  "طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن؟",
-  "	نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند؟",
-  "همان حال کار آنها به نوعی وابسته به متن می‌باشد",
-  "	آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند"
-];
-let website = [
-  "بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته",
-  "اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید؟"
-];
-let server = [
-  "گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی؟",
-  "از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی ؟",
-  "از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند؟"
-];
-const styles = theme => ({
-  floatRight:{
-    float:"right !important",
-  }
-});
 
 class MyDashboard extends React.Component {
   state = {

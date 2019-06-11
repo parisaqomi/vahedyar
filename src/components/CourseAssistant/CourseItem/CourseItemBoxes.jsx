@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React from "react";
 import CourseItemBox from './CourseItemBox';
 
 function CourseItemBoxes({items,onDelete}) {

@@ -4,7 +4,6 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
 
 
 class StudyItem extends React.Component {
@@ -25,7 +24,6 @@ class StudyItem extends React.Component {
         return(
             
         <div>
-            <Grid item xs={4}>
             {/* <Card className={classes.card}></Card> */}
                 <Card >
                     <CardActionArea>
@@ -45,7 +43,6 @@ class StudyItem extends React.Component {
                 (console.log(x)
                 ))
             } */}
-            </Grid>
         </div>
         );
 }
