@@ -10,7 +10,7 @@ import Hidden from "@material-ui/core/Hidden";
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 // core components
-import RTLNavbarLinks from "./RTLNavbarLinks.jsx";
+import NavbarTop from "./NavbarTop.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 
 import headerStyle from "assets/jss/material-dashboard-react/components/headerStyle.jsx";
@@ -37,10 +37,11 @@ function Header({ ...props }) {
           {/* Here we create navbar brand, based on route name */}
           <Button color="transparent" href="#" className={classes.title}>
             {makeBrand()}
+            
           </Button>
         </div>
         <Hidden smDown implementation="css">
-          {props.rtlActive ? <RTLNavbarLinks /> : null}
+          {props.rtlActive ? <NavbarTop /> : null}
         </Hidden>
         <Hidden mdUp implementation="css">
           <IconButton

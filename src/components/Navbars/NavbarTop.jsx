@@ -14,7 +14,7 @@ import Button from "components/CustomButtons/Button.jsx";
 
 import rtlHeaderLinksStyle from "assets/jss/material-dashboard-react/components/rtlHeaderLinksStyle.jsx";
 
-class HeaderLinks extends React.Component {
+class NavbarTop extends React.Component {
   state = {
     open: false
   };
@@ -82,4 +82,4 @@ class HeaderLinks extends React.Component {
   }
 }
 
-export default withStyles(rtlHeaderLinksStyle)(HeaderLinks);
+export default withStyles(rtlHeaderLinksStyle)(NavbarTop);
