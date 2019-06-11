@@ -1,7 +1,6 @@
 import Dashboard from "@material-ui/icons/Dashboard";
 import LibraryBooks from "@material-ui/icons/LibraryBooks";
 import BubbleChart from "@material-ui/icons/BubbleChart";
-import UserProfile from "views/UserProfile/UserProfile.jsx";
 import MyCourseList from "views/MyCoursesList/MyCoursesList.jsx";
 import CourseSituations from "views/CourseSituations/CourseSituations.jsx";
 import CourseAssistant from "views/CourseAssistant/CourseAssistant.jsx"
@@ -12,11 +11,11 @@ import MyDashboard from "views/Dashboard/Dashboard.jsx";
 const dashboardRoutes = [
 
   {
-    path: "/user",
-    name: "User Profile",
+    path: "/StudyPanel",
+    name: "Study Panel",
     rtlName: "پیشخوان تحصیلات ",
     icon: Dashboard,
-    component: UserProfile,
+    component: StudyPanel,
     layout: "/rtl"
   },
   {
@@ -52,14 +51,6 @@ const dashboardRoutes = [
     component: CourseAssistant,
     layout: "/rtl"
   },
-  {
-  path: "/StudyPanel",
-  name: "StudyPanel",
-  rtlName: "پیشخوان",
-  icon: BubbleChart,
-  component: StudyPanel,
-  layout: "/rtl"
-},
 {
   path: "/form",
   name: "form",
