@@ -7,7 +7,7 @@ import CourseSituations from "views/CourseSituations/CourseSituations.jsx";
 import CourseAssistant from "views/CourseAssistant/CourseAssistant.jsx"
 import StudyPanel from "views/StudyPanel/StudyPanel.jsx"
 import form from "views/form/form.jsx"
-import RTLPage from "views/RTLPage/RTLPage.jsx";
+import MyDashboard from "views/Dashboard/Dashboard.jsx";
 
 const dashboardRoutes = [
 
@@ -20,11 +20,11 @@ const dashboardRoutes = [
     layout: "/rtl"
   },
   {
-    path: "/rtl-page",
-    name: "RTL Support",
+    path: "/dashboard",
+    name: "MyDashboard",
     rtlName: "داشبورد تحصیل",
     icon: Dashboard,
-    component: RTLPage,
+    component: MyDashboard,
     layout: "/rtl"
   },
   {
