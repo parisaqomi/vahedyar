@@ -34,7 +34,7 @@ const switchRoutes = (
   </Switch>
 );
 
-class RTL extends React.Component {
+class Admin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -124,8 +124,8 @@ class RTL extends React.Component {
   }
 }
 
-RTL.propTypes = {
+Admin.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(rtlStyle)(RTL);
+export default withStyles(rtlStyle)(Admin);
