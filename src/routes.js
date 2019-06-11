@@ -1,4 +1,5 @@
 import Dashboard from "@material-ui/icons/Dashboard";
+import List from "@material-ui/icons/List";
 import LibraryBooks from "@material-ui/icons/LibraryBooks";
 import BubbleChart from "@material-ui/icons/BubbleChart";
 import MyCourseList from "views/MyCoursesList/MyCoursesList.jsx";
@@ -14,7 +15,7 @@ const dashboardRoutes = [
     path: "/StudyPanel",
     name: "Study Panel",
     rtlName: "پیشخوان تحصیلات ",
-    icon: Dashboard,
+    icon: BubbleChart,
     component: StudyPanel,
     layout: "/rtl"
   },
@@ -30,7 +31,7 @@ const dashboardRoutes = [
     path: "/myCoursesList",
     name: "My Course List",
     rtlName: "لیست دروس من ",
-    icon: "content_paste",
+    icon: List,
     component: MyCourseList,
     layout: "/rtl"
   },
@@ -51,14 +52,14 @@ const dashboardRoutes = [
     component: CourseAssistant,
     layout: "/rtl"
   },
-{
-  path: "/form",
-  name: "form",
-  rtlName: "فرم",
-  icon: BubbleChart,
-  component: form,
-  layout: "/rtl"
-},
+  {
+    path: "/form",
+    name: "form",
+    rtlName: "فرم",
+    icon: "content_paste",
+    component: form,
+    layout: "/rtl"
+  },
 ];
 
 export default dashboardRoutes;

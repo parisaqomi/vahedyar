@@ -1,15 +1,9 @@
 import React from "react";
 import classNames from "classnames";
-// @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-//import MenuItem from "@material-ui/core/MenuItem";
-//import MenuList from "@material-ui/core/MenuList";
 import Grow from "@material-ui/core/Grow";
-//import Paper from "@material-ui/core/Paper";
-//import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import Hidden from "@material-ui/core/Hidden";
 import Poppers from "@material-ui/core/Popper";
-// @material-ui/icons
 import Person from "@material-ui/icons/Person";
 import Notifications from "@material-ui/icons/Notifications";
 import Dashboard from "@material-ui/icons/Dashboard";
@@ -57,39 +51,7 @@ class HeaderLinks extends React.Component {
             <Search />
           </Button>
         </div>
-        <Button
-          color={window.innerWidth > 959 ? "transparent" : "white"}
-          justIcon={window.innerWidth > 959}
-          simple={!(window.innerWidth > 959)}
-          aria-label="Dashboard"
-          className={classes.buttonLink}
-        >
-          <Dashboard className={classes.icons} />
-          <Hidden mdUp implementation="css">
-            <p className={classes.linkText}>آمارها</p>
-          </Hidden>
-        </Button>
         <div className={classes.manager}>
-          <Button
-            buttonRef={node => {
-              this.anchorEl = node;
-            }}
-            color={window.innerWidth > 959 ? "transparent" : "white"}
-            justIcon={window.innerWidth > 959}
-            simple={!(window.innerWidth > 959)}
-            aria-owns={open ? "menu-list-grow" : null}
-            aria-haspopup="true"
-            onClick={this.handleToggle}
-            className={classes.buttonLink}
-          >
-            <Notifications className={classes.icons} />
-            <span className={classes.notifications}>۵</span>
-            <Hidden mdUp implementation="css">
-              <p onClick={this.handleClick} className={classes.linkText}>
-                اعلان‌ها
-              </p>
-            </Hidden>
-          </Button>
           <Poppers
             open={open}
             anchorEl={this.anchorEl}
@@ -101,53 +63,6 @@ class HeaderLinks extends React.Component {
               classes.pooperNav
             }
           >
-            {({ TransitionProps, placement }) => (
-              <Grow
-                {...TransitionProps}
-                id="menu-list-grow"
-                style={{
-                  transformOrigin:
-                    placement === "bottom" ? "center top" : "center bottom"
-                }}
-              >
-                {/* <Paper>
-                  <ClickAwayListener onClickAway={this.handleClose}>
-                    <MenuList role="menu">
-                      <MenuItem
-                        onClick={this.handleClose}
-                        className={classes.dropdownItem}
-                      >
-                        محمدرضا به ایمیل شما پاسخ داد
-                      </MenuItem>
-                      <MenuItem
-                        onClick={this.handleClose}
-                        className={classes.dropdownItem}
-                      >
-                        شما ۵ وظیفه جدید دارید
-                      </MenuItem>
-                      <MenuItem
-                        onClick={this.handleClose}
-                        className={classes.dropdownItem}
-                      >
-                        از حالا شما با علیرضا دوست هستید
-                      </MenuItem>
-                      <MenuItem
-                        onClick={this.handleClose}
-                        className={classes.dropdownItem}
-                      >
-                        اعلان دیگر
-                      </MenuItem>
-                      <MenuItem
-                        onClick={this.handleClose}
-                        className={classes.dropdownItem}
-                      >
-                        اعلان دیگر
-                      </MenuItem>
-                    </MenuList>
-                  </ClickAwayListener>
-                </Paper> */}
-              </Grow>
-            )}
           </Poppers>
         </div>
         <Button
