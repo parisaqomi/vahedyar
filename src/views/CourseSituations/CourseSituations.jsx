@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -7,7 +6,6 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
 import GridItem from "components/Grid/GridItem.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import Table from "components/Table/Table.jsx";
@@ -55,18 +53,18 @@ const styles = theme => ({
       lineHeight: "1"
     }
   },
- TextRight:{
+  TextRight: {
     textAlign: "right",
   },
-  blueHeader:{
+  blueHeader: {
     backgroundColor: "#3a99d9 !important",
   },
-  whiteText:{
-    color:"#fff !important",
+  whiteText: {
+    color: "#fff !important",
   }
 });
 
-class ControlledExpansionPanels extends React.Component {
+class CourseSituations extends React.Component {
   state = {
     expanded: null,
   };
@@ -83,77 +81,47 @@ class ControlledExpansionPanels extends React.Component {
 
     return (
       <GridContainer>
-      <GridItem xs={12} sm={12} md={12}>
-        <Card>
-          <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}> وضعیت دروس</h4>
-          </CardHeader>
-          <CardBody>
-            <Table className={classes.TextRight}
-              tableHeaderColor="primary"
-              tableHead={["نام درس", "واحد عملی ", "واحد نظری ", "نمره"," "]}
-              tableData={[]}
-            />
-            <div className={classes.root}>
-            <ExpansionPanel>
-              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon className={classes.whiteText} />} className={classes.blueHeader}>
-                <Typography className={classes.heading} className={classes.whiteText}> 1دروس اختیاری</Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails>
-                <Typography>
-                  مدیریت پروژه
+        <GridItem xs={12} sm={12} md={12}>
+          <Card>
+            <CardHeader color="primary">
+              <h4 className={classes.cardTitleWhite}> وضعیت دروس</h4>
+            </CardHeader>
+            <CardBody>
+              <Table className={classes.TextRight}
+                tableHeaderColor="primary"
+                tableHead={["نام درس", "واحد عملی ", "واحد نظری ", "نمره", " "]}
+                tableData={[]}
+              />
+              <div className={classes.root}>
+
+                <ExpansionPanel >
+                  <ExpansionPanelSummary expandIcon={<ExpandMoreIcon className={classes.whiteText} />} className={classes.blueHeader}>
+                    <Typography className={classes.heading && classes.whiteText}> دروس اختیاری</Typography>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails>
+                    <Typography>
+                      مدیریت پروژه
                 </Typography>
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
 
-            <ExpansionPanel >
-              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon className={classes.whiteText} />} className={classes.blueHeader}>
-                <Typography className={classes.heading} className={classes.whiteText}> دروس اختیاری</Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails>
-                <Typography>
-                  مدیریت پروژه
-                </Typography>
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
 
-            <ExpansionPanel>
-              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon className={classes.whiteText}/>} className={classes.blueHeader}>
-                <Typography className={classes.heading} className={classes.whiteText}> 2دروس اختیاری</Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails>
-                <Typography>
-                  مدیریت پروژه
-                </Typography>
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
 
-            <ExpansionPanel>
-              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon className={classes.whiteText}/>} className={classes.blueHeader}>
-                <Typography className={classes.heading} className={classes.whiteText}> 3دروس اختیاری</Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails>
-                <Typography>
-                  مدیریت پروژه
-                </Typography>
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
+              </div>
 
-</div>
-
-          </CardBody>
-        </Card>
-      </GridItem>
-    </GridContainer>
-      );
+            </CardBody>
+          </Card>
+        </GridItem>
+      </GridContainer>
+    );
   }
 }
 
-ControlledExpansionPanels.propTypes = {
+CourseSituations.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ControlledExpansionPanels);
+export default withStyles(styles)(CourseSituations);
 
 
 
